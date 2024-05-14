@@ -3,7 +3,7 @@
 Srinivas Nallandhighal
 2024-05-13
 
-Prepare files to plot Figure-1B
+# Prepare files to plot Figure-1B
 
 ``` r
 # Combine UM and TCGA data
@@ -177,7 +177,7 @@ a2
 # ggarrange(a1,a2,nrow=2,ncol=1)
 ```
 
-Prepare files to plot Figure-1C
+# Prepare files to plot Figure-1C
 
 ``` r
 # Get the gene names for the top 1000 most variable genes
@@ -303,7 +303,7 @@ all(colnames(e.sel)==rownames(annotations))
 ``` r
 # Draw heatmap
 out.comp <- pheatmap(e.sel, color = colors.hm, annotation_colors = ann_colors,
-                     fontsize_col = 6,fontsize_row = 2,
+                     fontsize_col = 6,fontsize_row = 2,show_colnames = F,
                      labels_row = e.symb$gene_name,cluster_cols = x.comp,
                      clustering_distance_rows = "correlation",cutree_cols = 3,
                      annotation_col = annotations,main = "Top 10% most variable genes UM cohort")
@@ -311,7 +311,7 @@ out.comp <- pheatmap(e.sel, color = colors.hm, annotation_colors = ann_colors,
 
 ![](Title_files/figure-gfm/Figure-1C-1.png)<!-- -->
 
-Prepare files to plot Figure-1D
+# Prepare files to plot Figure-1D
 
 ``` r
 # limma Primaries recurrence Yes vs No
@@ -372,7 +372,7 @@ EnhancedVolcano(top.table11,
 
 ![](Title_files/figure-gfm/Figure-1D-1.png)<!-- -->
 
-Prepare files to plot Figures-1E
+# Prepare files to plot Figures-1E
 
 ``` r
 dfgsea <- top.table11
@@ -420,7 +420,7 @@ fg1
 
 ![](Title_files/figure-gfm/Figure-1E-1.png)<!-- -->
 
-Prepare files to plot Figures-2A,2B
+# \# Prepare files to plot Figures-2A,2B
 
 ``` r
 int.gene <- intersect(as.character(gen.g.pfi$Gene),as.character(gen.g.os$Gene))
@@ -577,7 +577,7 @@ g2.train
 
 ![](Title_files/figure-gfm/Figure-2-1.png)![](Title_files/figure-gfm/Figure-2-2.png)![](Title_files/figure-gfm/Figure-2-3.png)
 
-Prepare files to plot Figures-2C, 2D
+# Prepare files to plot Figures-2C, 2D
 
 ``` r
 training$Age <- df.des$AgeAtOp
@@ -599,7 +599,7 @@ ggforest(coxfit2,fontsize = 1,main = paste0("Figure-2D"))
 
 ![](Title_files/figure-gfm/Figure-2C%202D-1.png)![](Title_files/figure-gfm/Figure-2C%202D-2.png)
 
-Prepare files to plot Figures-3
+# Prepare files to plot Figures-3
 
 ``` r
 test.tcga <- test.tcga1[rownames(test.tcga1) %in% rownames(int.symb),]
@@ -669,7 +669,7 @@ ggforest(coxfit5,fontsize = 1,main = paste0("Figure-3D"))
 
 ![](Title_files/figure-gfm/Figure-3-1.png)![](Title_files/figure-gfm/Figure-3-2.png)![](Title_files/figure-gfm/Figure-3-3.png)![](Title_files/figure-gfm/Figure-3-4.png)
 
-Prepare files to plot Figures-4
+# Prepare files to plot Figures-4
 
 ``` r
 mas.valid <- read.csv("/Users/srnallan/Desktop/Morgan lab/prolaris_131119/Analysis/df.des.mas.valid.csv",row.names = 1,header = T)
@@ -705,7 +705,7 @@ ggforest(coxfit4,fontsize = 1,main = paste0("Figure-4D"))
 
 ![](Title_files/figure-gfm/Figure-4-1.png)![](Title_files/figure-gfm/Figure-4-2.png)![](Title_files/figure-gfm/Figure-4-3.png)![](Title_files/figure-gfm/Figure-4-4.png)
 
-Prepare files to plot Figures-5
+# Prepare files to plot Figures-5
 
 ``` r
 # Subset logcounts matrix to 15G signature genes
